@@ -183,6 +183,10 @@ static const char *satip_tunercfg_tab[] = {
   "DVBS2-2",
   "DVBS2-4",
   "DVBS2-8",
+  "DVBS2-16",
+  "DVBS2-32",
+  "DVBS2-48",
+  "DVBS2-64",
   "DVBC-1",
   "DVBC-2",
   "DVBC-4",
@@ -603,7 +607,7 @@ satip_device_create( satip_device_info_t *info )
   sd->sd_fast_switch = 1;
   sd->sd_fullmux_ok  = 1;
   sd->sd_pids_len    = 127;
-  sd->sd_pids_max    = 32;
+  sd->sd_pids_max    = 64;
   sd->sd_pids_deladd = 1;
   sd->sd_fe          = 1;
   sd->sd_sig_scale   = 240;
@@ -698,7 +702,7 @@ satip_device_create( satip_device_info_t *info )
     if (type == DVB_TYPE_NONE) {
       tvherror(LS_SATIP, "%s: bad tuner type [%s]",
                satip_device_nicename(sd, buf2, sizeof(buf2)), argv[i]);
-    } else if (m < 0 || m > 32) {
+    } else if (m < 0 || m > 64) {
       tvherror(LS_SATIP, "%s: bad tuner count [%s]",
                satip_device_nicename(sd, buf2, sizeof(buf2)), argv[i]);
     } else {
