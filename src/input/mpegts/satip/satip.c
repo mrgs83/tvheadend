@@ -705,7 +705,7 @@ satip_device_create( satip_device_info_t *info )
     if (type == DVB_TYPE_NONE) {
       tvherror(LS_SATIP, "%s: bad tuner type [%s]",
                satip_device_nicename(sd, buf2, sizeof(buf2)), argv[i]);
-    } else if (m < 0 || m > 32) {
+    } else if (m < 0 || m > 48) {
       tvherror(LS_SATIP, "%s: bad tuner count [%s]",
                satip_device_nicename(sd, buf2, sizeof(buf2)), argv[i]);
     } else {
