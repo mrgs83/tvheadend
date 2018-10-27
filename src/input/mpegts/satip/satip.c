@@ -184,6 +184,7 @@ static const char *satip_tunercfg_tab[] = {
   "DVBS2-2",
   "DVBS2-4",
   "DVBS2-8",
+  "DVBS2-48",
   "DVBC-1",
   "DVBC-2",
   "DVBC-4",
@@ -559,7 +560,7 @@ satip_device_hack( satip_device_t *sd )
     /* version V1.13.0.105 and probably less */
     /* really ugly firmware - soooooo much restrictions */
     sd->sd_fullmux_ok  = 0;
-    sd->sd_pids_max    = 32;
+    sd->sd_pids_max    = 48;
     sd->sd_pids_deladd = 0;
     tvhwarn(LS_SATIP, "Detected old Inverto firmware V1.13.0.105 and less");
     tvhwarn(LS_SATIP, "Upgrade to V1.16.0.120 - http://http://www.inverto.tv/support/ - IDL400s");
@@ -609,7 +610,7 @@ satip_device_create( satip_device_info_t *info )
   sd->sd_fast_switch = 1;
   sd->sd_fullmux_ok  = 1;
   sd->sd_pids_len    = 127;
-  sd->sd_pids_max    = 32;
+  sd->sd_pids_max    = 48;
   sd->sd_pids_deladd = 1;
   sd->sd_fe          = 1;
   sd->sd_sig_scale   = 240;
